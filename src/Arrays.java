@@ -1,217 +1,217 @@
 
 public class Arrays
 {
-////  [1] - ВЌГ Г©ГІГЁ Г¬ГЁГ­ГЁГ¬Г Г«ГјГ­Г»Г© ГЅГ«ГҐГ¬ГҐГ­ГІ Г¬Г Г±Г±ГЁГўГ 
-//	public static int minel(int loc[])
+//  [1] - Ќайти минимальный элемент массива
+	public static int minel(int loc[])
+	{
+
+
+		int min = loc[0];
+		int res1 = 1;
+		for(int i = 0; i != loc.length; i ++)
+		{
+			if(loc[i] < min)
+			{
+				min = loc[i];
+				res1 = min;
+			}
+		}
+		return res1;
+	}
+//	[2] - Ќайти максимальный элемент массива
+	public static int maxel(int loc[])
+	{
+		int res2 = 0;
+		int max = loc[0];
+		for(int i = 0; i !=loc.length; i++)
+		{
+			if(loc[i] > max)
+			{
+				max = loc[i];
+				res2 = max;
+			}
+		}
+		return res2;
+	}
+//	[3] - Ќайти индекс минимального элемента массива
+	public static int minIndex (int loc[])
+	{
+		int res3 = 0;
+		int min = loc[0];
+		int index = 0;
+		for(int i = 0; i != loc.length; i++)
+		{
+			if(loc[i] < min){
+				min = loc[i];
+				index = i;
+				res3 = index;
+			}	
+		}
+		return res3;
+	}
+// [4] - Ќайти индекс максимального элемента массива
+	public static int maxIndex (int loc[])
+	{
+		int res4 = 0;
+		int max = loc[0];
+		int index = 0;
+		for(int i = 0; i != loc.length; i++)
+		{
+			if(loc[i] > max){
+				max = loc[i];
+				index = i;
+				res4 = index;
+			}	
+		}
+		return res4;
+	}
+//	[5] - Џосчитать сумму элементов массива с нечетными индексами
+	public static int sumNeChetIndex(int loc[])
+	{
+		int res5 = 0; 
+		int max = loc[0];
+		int index = 1 ;
+		int sum = 0;
+		for(int i = 0; i != loc.length; i ++)
+		{
+			index = i+1;
+			if(index %2 != 0)
+			{
+				sum = sum + loc[i];
+				res5 = sum;
+			}	
+		}
+		return res5;
+	}
+//	[6]‘делать реверс массива (массив в обратном направлении)
+//	public static int reversMassArr(int loc[])
 //	{
-//
-//
-//		int min = loc[0];
-//		int res1 = 1;
-//		for(int i = 0; i != loc.length; i ++)
-//		{
-//			if(loc[i] < min)
-//			{
-//				min = loc[i];
-//				res1 = min;
-//			}
-//		}
-//		return res1;
-//	}
-////	[2] - ВЌГ Г©ГІГЁ Г¬Г ГЄГ±ГЁГ¬Г Г«ГјГ­Г»Г© ГЅГ«ГҐГ¬ГҐГ­ГІ Г¬Г Г±Г±ГЁГўГ 
-//	public static int maxel(int loc[])
-//	{
-//		int res2 = 0;
-//		int max = loc[0];
-//		for(int i = 0; i !=loc.length; i++)
-//		{
-//			if(loc[i] > max)
-//			{
-//				max = loc[i];
-//				res2 = max;
-//			}
-//		}
-//		return res2;
-//	}
-////	[3] - ВЌГ Г©ГІГЁ ГЁГ­Г¤ГҐГЄГ± Г¬ГЁГ­ГЁГ¬Г Г«ГјГ­Г®ГЈГ® ГЅГ«ГҐГ¬ГҐГ­ГІГ  Г¬Г Г±Г±ГЁГўГ 
-//	public static int minIndex (int loc[])
-//	{
-//		int res3 = 0;
-//		int min = loc[0];
-//		int index = 0;
-//		for(int i = 0; i != loc.length; i++)
-//		{
-//			if(loc[i] < min){
-//				min = loc[i];
-//				index = i;
-//				res3 = index;
-//			}	
-//		}
-//		return res3;
-//	}
-//// [4] - ВЌГ Г©ГІГЁ ГЁГ­Г¤ГҐГЄГ± Г¬Г ГЄГ±ГЁГ¬Г Г«ГјГ­Г®ГЈГ® ГЅГ«ГҐГ¬ГҐГ­ГІГ  Г¬Г Г±Г±ГЁГўГ 
-//	public static int maxIndex (int loc[])
-//	{
-//		int res4 = 0;
-//		int max = loc[0];
-//		int index = 0;
-//		for(int i = 0; i != loc.length; i++)
-//		{
-//			if(loc[i] > max){
-//				max = loc[i];
-//				index = i;
-//				res4 = index;
-//			}	
-//		}
-//		return res4;
-//	}
-////	[5] - ВЏГ®Г±Г·ГЁГІГ ГІГј Г±ГіГ¬Г¬Гі ГЅГ«ГҐГ¬ГҐГ­ГІГ®Гў Г¬Г Г±Г±ГЁГўГ  Г± Г­ГҐГ·ГҐГІГ­Г»Г¬ГЁ ГЁГ­Г¤ГҐГЄГ±Г Г¬ГЁ
-//	public static int sumNeChetIndex(int loc[])
-//	{
-//		int res5 = 0; 
-//		int max = loc[0];
-//		int index = 1 ;
-//		int sum = 0;
-//		for(int i = 0; i != loc.length; i ++)
-//		{
-//			index = i+1;
-//			if(index %2 != 0)
-//			{
-//				sum = sum + loc[i];
-//				res5 = sum;
-//			}	
-//		}
-//		return res5;
-//	}
-////	[6]В‘Г¤ГҐГ«Г ГІГј Г°ГҐГўГҐГ°Г± Г¬Г Г±Г±ГЁГўГ  (Г¬Г Г±Г±ГЁГў Гў Г®ГЎГ°Г ГІГ­Г®Г¬ Г­Г ГЇГ°Г ГўГ«ГҐГ­ГЁГЁ)
-////	public static int reversMassArr(int loc[])
-////	{
-////		int res6 = 0; 
-////		
-////		return res6;
-////		
-////	}
-//	
-////	[7] - ВЏГ®Г±Г·ГЁГІГ ГІГј ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г­ГҐГ·ГҐГІГ­Г»Гµ ГЅГ«ГҐГ¬ГҐГ­ГІГ®Гў Г¬Г Г±Г±ГЁГўГ 
-//	public static int neChetElMass(int loc[])
-//	{
-//		int res7 = 0;
-//		int max = loc[0];
-//		int index = 1 ;
-//		for(int i = 0; i != loc.length; i ++)
-//		{
-//			index = i+1;
-//			if(index %2 != 0)
-//			{
-//				res7 = res7 + 1;
-//			}	
-//		}
-//		return res7;
-//	}
-////	[8] - ВЏГ®Г¬ГҐГ­ГџГІГј Г¬ГҐГ±ГІГ Г¬ГЁ ГЇГҐГ°ГўГіГѕ ГЁ ГўГІГ®Г°ГіГѕ ГЇГ®Г«Г®ГўГЁГ­Гі Г¬Г Г±Г±ГЁГўГ , Г­Г ГЇГ°ГЁГ¬ГҐГ°, Г¤Г«Гџ Г¬Г Г±Г±ГЁГўГ  1 2 3  4, Г°ГҐГ§ГіГ«ГјГІГ ГІ 3 4 1 2
-//	public static int rokerovkaMass(int loc[])
-//	{
-//		int res8 = 0;
+//		int res6 = 0; 
 //		
-//		return res8;
+//		return res6;
+//		
 //	}
-////	[9] - ВЋГІГ±Г®Г°ГІГЁГ°Г®ГўГ ГІГј Г¬Г Г±Г±ГЁГў (ГЇГіГ§Г»Г°ГјГЄГ®Г¬ (Bubble), ГўГ»ГЎГ®Г°Г®Г¬ (Select), ГўГ±ГІГ ГўГЄГ Г¬ГЁ (Insert))
-//	// Г±Г®Г°ГІГЁГ°Г®ГўГЄГ  ГЇГіГ§Г»Г°ГјГЄГ®Г¬ 
-//	
-//	public static int bubbleSort(int[] arr)
-//	{
-//		int res91 = 0;
-//	    /*В‚Г­ГҐГёГ­ГЁГ© Г¶ГЁГЄГ« ГЄГ Г¦Г¤Г»Г© Г°Г Г§ Г±Г®ГЄГ°Г Г№Г ГҐГІ ГґГ°Г ГЈГ¬ГҐГ­ГІ Г¬Г Г±Г±ГЁГўГ , 
-//	      ГІГ ГЄ ГЄГ ГЄ ГўГ­ГіГІГ°ГҐГ­Г­ГЁГ© Г¶ГЁГЄГ« ГЄГ Г¦Г¤Г»Г© Г°Г Г§ Г±ГІГ ГўГЁГІ Гў ГЄГ®Г­ГҐГ¶
-//	      ГґГ°Г ГЈГ¬ГҐГ­ГІГ  Г¬Г ГЄГ±ГЁГ¬Г Г«ГјГ­Г»Г© ГЅГ«ГҐГ¬ГҐГ­ГІ*/   
-//	    for(int i = arr.length-1 ; i > 0 ; i--)
-//	    {
-//	        for(int j = 0 ; j < i ; j++)
-//	        {
-//	            /*В‘Г°Г ГўГ­ГЁГўГ ГҐГ¬ ГЅГ«ГҐГ¬ГҐГ­ГІГ» ГЇГ®ГЇГ Г°Г­Г®, 
-//	              ГҐГ±Г«ГЁ Г®Г­ГЁ ГЁГ¬ГҐГѕГІ Г­ГҐГЇГ°Г ГўГЁГ«ГјГ­Г»Г© ГЇГ®Г°ГџГ¤Г®ГЄ, 
-//	              ГІГ® Г¬ГҐГ­ГџГҐГ¬ Г¬ГҐГ±ГІГ Г¬ГЁ*/
-//	            if( arr[j] > arr[j+1] )
-//	            {
-//	                int tmp = arr[j];
-//	                arr[j] = arr[j+1];
-//	                arr[j+1] = tmp;
-//	            }
-//	        }
-//	    }
-//		return res91;
-//	}
-//	//В‘Г®Г°ГІГЁГ°Г®ГўГЄГ  В‚Г»ГЎГ®Г°Г®Г¬  /// Г­ГҐ ГЇГ®Г­ГџГ« ((( 
-//	public static int selectionSort(int[] arr)
-//	{
-//		int res92 = 0;
-//		/*ВЏГ® Г®Г·ГҐГ°ГҐГ¤ГЁ ГЎГіГ¤ГҐГ¬ ГЇГ°Г®Г±Г¬Г ГІГ°ГЁГўГ ГІГј ГўГ±ГҐ ГЇГ®Г¤Г¬Г­Г®Г¦ГҐГ±ГІГўГ 
-//	      ГЅГ«ГҐГ¬ГҐГ­ГІГ®Гў Г¬Г Г±Г±ГЁГўГ  (0 - ГЇГ®Г±Г«ГҐГ¤Г­ГЁГ©, 1-ГЇГ®Г±Г«ГҐГ¤Г­ГЁГ©, 
-//	      2-ГЇГ®Г±Г«ГҐГ¤Г­ГЁГ©,...)*/
-//		for (int i = 0; i < arr.length; i++) 
-//		{
-//			/*ВЏГ°ГҐГ¤ГЇГ®Г«Г ГЈГ ГҐГ¬, Г·ГІГ® ГЇГҐГ°ГўГ»Г© ГЅГ«ГҐГ¬ГҐГ­ГІ (Гў ГЄГ Г¦Г¤Г®Г¬
-//	           ГЇГ®Г¤Г¬Г­Г®Г¦ГҐГ±ГІГўГҐ ГЅГ«ГҐГ¬ГҐГ­ГІГ®Гў) ГџГўГ«ГџГҐГІГ±Гџ Г¬ГЁГ­ГЁГ¬Г Г«ГјГ­Г»Г¬ */
-//			int min = arr[i];
-//			int min_i = i; 
-//			/*В‚ Г®Г±ГІГ ГўГёГҐГ©Г±Гџ Г·Г Г±ГІГЁ ГЇГ®Г¤Г¬Г­Г®Г¦ГҐГ±ГІГўГ  ГЁГ№ГҐГ¬ ГЅГ«ГҐГ¬ГҐГ­ГІ,
-//	           ГЄГ®ГІГ®Г°Г»Г© Г¬ГҐГ­ГјГёГҐ ГЇГ°ГҐГ¤ГЇГ®Г«Г®Г¦ГҐГ­Г­Г®ГЈГ® Г¬ГЁГ­ГЁГ¬ГіГ¬Г */
-//			for (int j = i+1; j < arr.length; j++)
-//			{
-//				//В…Г±Г«ГЁ Г­Г ГµГ®Г¤ГЁГ¬, Г§Г ГЇГ®Г¬ГЁГ­Г ГҐГ¬ ГҐГЈГ® ГЁГ­Г¤ГҐГЄГ±
-//				if (arr[j] < min) {
-//					min = arr[j];
-//					min_i = j;
-//				}
-//			}
-//			/*В…Г±Г«ГЁ Г­Г ГёГҐГ«Г±Гџ ГЅГ«ГҐГ¬ГҐГ­ГІ, Г¬ГҐГ­ГјГёГЁГ©, Г·ГҐГ¬ Г­Г  ГІГҐГЄГіГ№ГҐГ© ГЇГ®Г§ГЁГ¶ГЁГЁ,
-//	          Г¬ГҐГ­ГџГҐГ¬ ГЁГµ Г¬ГҐГ±ГІГ Г¬ГЁ*/
-//			if (i != min_i) 
-//			{
-//				int tmp = arr[i];
-//				arr[i] = arr[min_i];
-//				arr[min_i] = tmp;
-//			}
-//			res92 = arr[min_i] ;
-//		}
-//		return res92;
-//	}
-//	
-//	//В‘Г®Г°ГІГЁГ°Г®ГўГЄГ  В‚Г±ГІГ ГўГЄГ Г¬ГЁ 
-//// [10] - ВЋГІГ±Г®Г°ГІГЁГ°Г®ГўГ ГІГј Г¬Г Г±Г±ГЁГў (Quick, Merge, Shell, Heap)
-//
-//	public static int partition(int arr[], int left, int right)
-//	{
-//		int i = left, j = right;
-//		int tmp;
-//		int pivot = arr[(left + right) / 2];
-//
-//		while (i <= j) {
-//			while (arr[i] < pivot)
-//				i++;
-//			while (arr[j] > pivot)
-//				j--;
-//			if (i <= j) {
-//				tmp = arr[i];
-//				arr[i] = arr[j];
-//				arr[j] = tmp;
-//				i++;
-//				j--;
-//			}
-//		};
-//
-//		return i;
-//	}
-//
-//	void quickSort(int arr[], int left, int right) 
-//	{
-//		int index = partition(arr, left, right);
-//		if (left < index - 1)
-//			quickSort(arr, left, index - 1);
-//		if (index < right)
-//			quickSort(arr, index, right);
-//	}
-//
-//	
+	
+//	[7] - Џосчитать количество нечетных элементов массива
+	public static int neChetElMass(int loc[])
+	{
+		int res7 = 0;
+		int max = loc[0];
+		int index = 1 ;
+		for(int i = 0; i != loc.length; i ++)
+		{
+			index = i+1;
+			if(index %2 != 0)
+			{
+				res7 = res7 + 1;
+			}	
+		}
+		return res7;
+	}
+//	[8] - ЏоменЯть местами первую и вторую половину массива, например, длЯ массива 1 2 3  4, результат 3 4 1 2
+	public static int rokerovkaMass(int loc[])
+	{
+		int res8 = 0;
+		
+		return res8;
+	}
+//	[9] - Ћтсортировать массив (пузырьком (Bubble), выбором (Select), вставками (Insert))
+	// сортировка пузырьком 
+	
+	public static int bubbleSort(int[] arr)
+	{
+		int res91 = 0;
+	    /*‚нешний цикл каждый раз сокращает фрагмент массива, 
+	      так как внутренний цикл каждый раз ставит в конец
+	      фрагмента максимальный элемент*/   
+	    for(int i = arr.length-1 ; i > 0 ; i--)
+	    {
+	        for(int j = 0 ; j < i ; j++)
+	        {
+	            /*‘равниваем элементы попарно, 
+	              если они имеют неправильный порЯдок, 
+	              то менЯем местами*/
+	            if( arr[j] > arr[j+1] )
+	            {
+	                int tmp = arr[j];
+	                arr[j] = arr[j+1];
+	                arr[j+1] = tmp;
+	            }
+	        }
+	    }
+		return res91;
+	}
+	//‘ортировка ‚ыбором  /// не понЯл ((( 
+	public static int selectionSort(int[] arr)
+	{
+		int res92 = 0;
+		/*Џо очереди будем просматривать все подмножества
+	      элементов массива (0 - последний, 1-последний, 
+	      2-последний,...)*/
+		for (int i = 0; i < arr.length; i++) 
+		{
+			/*Џредполагаем, что первый элемент (в каждом
+	           подмножестве элементов) ЯвлЯетсЯ минимальным */
+			int min = arr[i];
+			int min_i = i; 
+			/*‚ оставшейсЯ части подмножества ищем элемент,
+	           который меньше предположенного минимума*/
+			for (int j = i+1; j < arr.length; j++)
+			{
+				//…сли находим, запоминаем его индекс
+				if (arr[j] < min) {
+					min = arr[j];
+					min_i = j;
+				}
+			}
+			/*…сли нашелсЯ элемент, меньший, чем на текущей позиции,
+	          менЯем их местами*/
+			if (i != min_i) 
+			{
+				int tmp = arr[i];
+				arr[i] = arr[min_i];
+				arr[min_i] = tmp;
+			}
+			res92 = arr[min_i] ;
+		}
+		return res92;
+	}
+	
+	//‘ортировка ‚ставками 
+// [10] - Ћтсортировать массив (Quick, Merge, Shell, Heap)
+
+	public static int partition(int arr[], int left, int right)
+	{
+		int i = left, j = right;
+		int tmp;
+		int pivot = arr[(left + right) / 2];
+
+		while (i <= j) {
+			while (arr[i] < pivot)
+				i++;
+			while (arr[j] > pivot)
+				j--;
+			if (i <= j) {
+				tmp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = tmp;
+				i++;
+				j--;
+			}
+		};
+
+		return i;
+	}
+
+	void quickSort(int arr[], int left, int right) 
+	{
+		int index = partition(arr, left, right);
+		if (left < index - 1)
+			quickSort(arr, left, index - 1);
+		if (index < right)
+			quickSort(arr, index, right);
+	}
+
+	
 	
 }
